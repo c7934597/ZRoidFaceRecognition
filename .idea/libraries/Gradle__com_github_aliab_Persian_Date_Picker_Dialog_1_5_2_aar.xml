@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.aliab:Persian-Date-Picker-Dialog:1.5.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c51e39b25972f42372b4fb85b96cd864/jetified-Persian-Date-Picker-Dialog-1.5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c51e39b25972f42372b4fb85b96cd864/jetified-Persian-Date-Picker-Dialog-1.5.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c51e39b25972f42372b4fb85b96cd864/jetified-Persian-Date-Picker-Dialog-1.5.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.aliab/Persian-Date-Picker-Dialog/1.5.2/768e343073d5085d0d97c79d239fc927fdb7b89a/Persian-Date-Picker-Dialog-1.5.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

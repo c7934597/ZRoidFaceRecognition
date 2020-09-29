@@ -188,14 +188,35 @@ public class TFLiteObjectDetectionAPIModel
             final float[] knownEmb = ((float[][]) entry.getValue().getExtra())[0];
 
             float distance = 0;
+//            for (int i = 0; i < emb.length; i++) {
+//                float diff = emb[i] - knownEmb[i];
+//                distance += diff * diff;
+//            }
+//            distance = (float) Math.sqrt(distance);
+//            if (ret == null || distance < ret.second) {
+//                ret = new Pair<>(name, distance);
+//            }
+
+            float vector1Modulo = 0;//向量1的模
+            float vector2Modulo = 0;//向量2的模
+            float vectorProduct = 0; //向量積
             for (int i = 0; i < emb.length; i++) {
-                float diff = emb[i] - knownEmb[i];
-                distance += diff * diff;
+                vector1Modulo += emb[i] * emb[i];
+                vector2Modulo += knownEmb[i] * knownEmb[i];
+                vectorProduct += emb[i] * knownEmb[i];
             }
-            distance = (float) Math.sqrt(distance);
-            if (ret == null || distance < ret.second) {
-                ret = new Pair<>(name, distance);
+            vector1Modulo = (float) Math.sqrt(vector1Modulo);
+            vector2Modulo = (float) Math.sqrt(vector2Modulo);
+            distance = vectorProduct / (vector1Modulo * vector2Modulo);
+
+            if (distance < 0.6) {
+                ret = null;
+            } else {
+                if (ret == null || distance < ret.second) {
+                    ret = new Pair<>(name, distance);
+                }
             }
+
         }
 
         return ret;
